@@ -1,5 +1,6 @@
 @import './assets/scss/style.scss';
 @import './assets/scss/start.scss';
+@import './assets/scss/loader.scss';
 
 @font-face {
     font-family: Poppins;
@@ -30,5 +31,10 @@
     font-family: Poppins;
     src: url(./assets/font/Poppins-Bold.woff);
     font-weight: 700;
+}
+
+@font-face {
+    font-family: Creativo;
+    src: url(./assets/font/Creativo-Italic.woff);
 }
 
