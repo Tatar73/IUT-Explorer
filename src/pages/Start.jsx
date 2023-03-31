@@ -5,12 +5,12 @@ const Start = () => {
   return (
     <div className="startPage">
         <h1>Iut Explorer</h1>
-        <img src={fleche} alt="Logo" />
+        <img src={logo} alt="Logo" />
         <div className='startSection'>
             <p>Je suis ici pour t’accompagner dans ta visite afin que tu récoltes les informations qui t’intéressent. En route !</p>
             <div className="buttonStart">
                 <a href="">Commencer</a>
-                <img src={logo} alt="flèche" />
+                <img src={fleche} alt="flèche" />
             </div>
         </div>
     </div>

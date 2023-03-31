@@ -1,7 +1,12 @@
-body{
+
+body .startPage{
     background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
+    width: 100%;
+    height: 100vh;
+    h1{
+        font-family: 'Poppins';
+        font-weight: 700;
+        color: white;
+    }
 }
 
-h1{
-    color: red;
-}
