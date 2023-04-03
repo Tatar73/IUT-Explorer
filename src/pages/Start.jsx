@@ -11,7 +11,7 @@ const Start = () => {
         <img src={logo} alt="Logo" />
         <div className='startSection'>
             <motion.p initial={{ y: -50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 0.5 }}>Je suis ici pour t’accompagner dans ta visite afin que tu récoltes les informations qui t’intéressent. En route !</motion.p>
-            <Link to="/chat">
+            <Link to="/chat" style={{textDecoration: 'none'}}>
               <motion.div initial={{ y: 50, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 0.5, delay: 1 }} className="buttonStart">
                   <a href="">Commencer</a>
                   <img src={fleche} alt="flèche" />
