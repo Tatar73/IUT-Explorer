@@ -10,8 +10,6 @@ const Chat = () => {
                     <div className="circle"></div>
                     <p>en ligne</p>
                 </div>
-            </div>
-            <div className="right">
                 <img src={robot} alt="illustration robot" />
             </div>
         </div>
