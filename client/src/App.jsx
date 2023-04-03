@@ -6,7 +6,8 @@ import {useState, useEffect} from 'react'
 
 function App() {
   const [loading, setLoading] = useState(true)
-  
+
+
   window.addEventListener('load', load())
 
   useEffect(() => {

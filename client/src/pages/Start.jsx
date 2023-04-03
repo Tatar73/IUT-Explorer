@@ -4,6 +4,9 @@ import fleche from '../assets/img/flecheButton.svg'
 import { Link } from 'react-router-dom';
 import { motion } from "framer-motion"
 
+
+
+
 const Start = () => {
   return (
     <div className="startPage">
