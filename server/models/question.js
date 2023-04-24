@@ -1,8 +1,17 @@
+const { ObjectId } = require('mongodb');
 const mongoose = require('mongoose');
 
 const questionSchema = new mongoose.Schema({
-  content: {
+  id: {
+    type: ObjectId,
+  },
+  question: {
     type: String,
+    required: true,
+    unique: true
+  },
+  reponse: {
+    type: Array,
     required: true
   }
 });

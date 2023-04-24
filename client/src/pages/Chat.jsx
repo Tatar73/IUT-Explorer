@@ -1,6 +1,5 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
-import axios from 'axios';
 import robot from '../assets/img/chatImg.svg'
 import wave from '../assets/img/vague.svg'
 import Chatbot from 'react-chatbot-kit'
@@ -12,18 +11,6 @@ import ActionProvider from '../components/ActionProvider';
 const Chat = () => {
   const [questions, setQuestions] = useState([]);
 
-  useEffect(() => {
-    async function fetchQuestions() {
-      try {
-        const response = await axios.get('http://localhost:27017/api/questions');
-        setQuestions(response.data);
-      } catch (error) {
-        console.error('Erreur lors de la récupération des questions:', error);
-      }
-    }
-
-    fetchQuestions();
-  }, []);
   
   return (
     <div className="chatPage">
