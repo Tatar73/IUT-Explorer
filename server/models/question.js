@@ -7,8 +7,7 @@ const questionSchema = new mongoose.Schema({
   },
   question: {
     type: String,
-    required: true,
-    unique: true
+    required: true
   },
   reponse: {
     type: Array,

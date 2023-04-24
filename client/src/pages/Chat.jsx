@@ -11,6 +11,15 @@ import ActionProvider from '../components/ActionProvider';
 const Chat = () => {
   const [questions, setQuestions] = useState([]);
 
+  useEffect(() => {
+    const options = {method: 'GET'};
+
+    fetch('http://127.0.0.1:3001/api/questions', options)
+      .then(response => response.json())
+      .then(response => console.log(response))
+      .catch(err => console.error(err));
+      
+  }, [])
   
   return (
     <div className="chatPage">
