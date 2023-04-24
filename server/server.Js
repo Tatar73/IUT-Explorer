@@ -1,24 +1,23 @@
-const express = require("express")
-const mongoose = require('mongoose')
-const url = "mongodb://localhost:8000/iutexplorer"
-const port = 8000;
+const express = require('express');
+const bodyParser = require('body-parser');
+const cors = require('cors');
+const mongoose = require('mongoose');
+
+
 const app = express();
+app.use(bodyParser.json());
+app.use(cors());
 
-mongoose.connect(url, {})
-    .then(result => console.log("database connected"))
-    .catch(err => console.log(err))
+const PORT = process.env.PORT || 3001;
 
-// app.use(function(req, res, next) {
-//     res.header("Access-Control-Allow-Origin", "http://localhost:5178");
-//     res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-//     res.header("Content-Security-Policy", "default-src 'none'; font-src http://localhost:8000;");
-//     next();
-// });
+const questionsRouter = require('./routes/questions');
+app.use('/api/questions', questionsRouter);
 
-app.get('/', (reg, res) => {
-    res.send("<h1>Hello from nodejs app</hi>")
-});
 
-app.listen(port, () => {
-    console.log("server is running at port " + port)
-})
+
+mongoose.connect('mongodb://localhost:27017/chatbotDB', { useNewUrlParser: true, useUnifiedTopology: true })
+  .then(() => {
+    console.log('Connected to MongoDB');
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+  })
+  .catch((error) => console.log(error.message));

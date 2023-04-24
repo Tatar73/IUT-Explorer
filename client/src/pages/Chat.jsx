@@ -1,5 +1,6 @@
 import React from 'react'
 import {useState, useEffect} from 'react'
+import axios from 'axios';
 import robot from '../assets/img/chatImg.svg'
 import wave from '../assets/img/vague.svg'
 import Chatbot from 'react-chatbot-kit'
@@ -9,19 +10,20 @@ import MessageParser from '../components/MessageParser';
 import ActionProvider from '../components/ActionProvider';
 
 const Chat = () => {
-  const [backendData, setBackendData] = useState([{}])
-  
-  useEffect(() => {
-    fetch("http://localhost:8000").then(
-      response => response.json()
-    ).then(
-      data => {
-        setBackendData(data)
-      }
-    )
-  }, [])
+  const [questions, setQuestions] = useState([]);
 
-  console.log(backendData);
+  useEffect(() => {
+    async function fetchQuestions() {
+      try {
+        const response = await axios.get('http://localhost:27017/api/questions');
+        setQuestions(response.data);
+      } catch (error) {
+        console.error('Erreur lors de la récupération des questions:', error);
+      }
+    }
+
+    fetchQuestions();
+  }, []);
   
   return (
     <div className="chatPage">
@@ -40,15 +42,6 @@ const Chat = () => {
             messageParser={MessageParser}
             actionProvider={ActionProvider}
             />
-        </div>
-        <div>
-          {(typeof backendData.users === 'undefined') ? (
-            <p>Loading...</p>
-          ): (
-            backendData.users.map((user, i) => (
-              <p key={i}>{user}</p>
-            ))
-          )}
         </div>
     </div>
   )
