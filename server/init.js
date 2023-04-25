@@ -12,10 +12,10 @@ mongoose.connect('mongodb://localhost:27017/chatbotDB', { useNewUrlParser: true,
     })
     const question1a = new Schema({
       question: 'Parmi ces 5 domaines, lequel préférez-vous : ',
-      reponse: ['Ingénierie matériaux','Packaging innovation','Multimédia internet', 'Génie civil', 'Gestion commerce ']
+      reponse: ['Ingénierie matériaux','Packaging innovation','Multimédia internet', 'Génie civil', 'Gestion commerce']
     })
     const question1b = new Schema({
-      question: 'Quelle branche préférez-vous : ',
+      question: 'Quelle branche préférez-vous: ',
       reponse: ['Développement web','Graphisme','Communication', 'Audiovisuel']
     })
     const question1c = new Schema({

@@ -4,22 +4,12 @@ import robot from '../assets/img/chatImg.svg'
 import wave from '../assets/img/vague.svg'
 import Chatbot from 'react-chatbot-kit'
 import 'react-chatbot-kit/build/main.css'
-import config from '../components/config';
-import MessageParser from '../components/MessageParser';
-import ActionProvider from '../components/ActionProvider';
+import config from '../components/Chatbot/config';
+import MessageParser from '../components/Chatbot/MessageParser';
+import ActionProvider from '../components/Chatbot/ActionProvider';
 
 const Chat = () => {
   const [questions, setQuestions] = useState([]);
-
-  useEffect(() => {
-    const options = {method: 'GET'};
-
-    fetch('http://127.0.0.1:3001/api/questions', options)
-      .then(response => response.json())
-      .then(response => console.log(response))
-      .catch(err => console.error(err));
-      
-  }, [])
   
   return (
     <div className="chatPage">
