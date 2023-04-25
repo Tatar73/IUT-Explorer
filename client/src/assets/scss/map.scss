@@ -1,0 +1,89 @@
+.mapPage{
+    background: white;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    .header{
+      background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
+      border-radius: 0px 0px 15px 15px;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      img{
+          padding: 1rem 0;
+          width: 75px;
+      }
+      h2{
+        font-family: 'Poppins';
+        font-weight: 700;
+        color: white;
+      }
+    }
+    svg{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        width: 70%;
+        height: 70%;
+        .pec{
+            animation-name: reveal;
+            animation-duration: 2s;
+            animation-fill-mode: forwards;
+            mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+        }
+    }
+    .footer{
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 10vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
+      border-radius: 15px 15px 0px 0px;
+      .left{
+        margin-left: 2rem;
+        h1{
+          font-family: 'Poppins';
+          font-weight: 700;
+          color: white;
+        }
+        .statut{
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            p{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                line-height: 24px;
+                color: #FFFFFF;
+            }
+            .circle{
+                background: #D9D9D9;
+                width: 12px;
+                height: 12px;
+                border-radius: 100%;
+            }
+        }
+      }
+      .right{
+        margin-right: 2rem;
+      }
+
+    }
+}
+
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
