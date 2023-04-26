@@ -23,7 +23,7 @@ const Response7Widget = (props) => {
     </>
   );
 
-  return <div class="container-button">{buttonMarkup}</div>;
+  return <div className="container-button">{buttonMarkup}</div>;
 };
 
 export default Response7Widget;
