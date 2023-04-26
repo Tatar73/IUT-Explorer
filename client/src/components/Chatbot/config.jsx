@@ -7,7 +7,7 @@ import SGMWidget from './Widget/SGMWidget';
 import NSPWidget from './Widget/NSPWidget';
 import PECWidget from './Widget/PECWidget';
 import Response7Widget from './Widget/Response7Widget';
-import Responseheight from './Widget/Responseheight';
+import ResponseEight from './Widget/ResponseEight';
 
 
 const botName = 'Evan';
@@ -53,7 +53,7 @@ widgets: [
     },
     {
       widgetName: "Responseheight",
-      widgetFunc: (props) => <Responseheight {...props} />,
+      widgetFunc: (props) => <ResponseEight {...props} />,
     },
   ],
 };

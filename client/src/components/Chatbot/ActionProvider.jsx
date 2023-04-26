@@ -6,7 +6,7 @@ import PECWidget from './Widget/PECWidget';
 import SGMWidget from './Widget/SGMWidget';
 import NSPWidget from './Widget/NSPWidget';
 import Response7Widget from './Widget/Response7Widget';
-import ResponseHeight from './Widget/Responseheight'
+import ResponseEight from './Widget/ResponseEight'
 
 const config = {
     widgets: [
@@ -39,8 +39,8 @@ const config = {
         widgetFunc: (props) => <Response7Widget {...props} />,
       },
       {
-        widgetName: "Responseheight",
-        widgetFunc: (props) => <ResponseHeight {...props} />,
+        widgetName: "ResponseEight",
+        widgetFunc: (props) => <ResponseEight {...props} />,
       },
     ],
   };
@@ -48,7 +48,7 @@ const config = {
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [responses, setReponses] = useState([]);
-    const [index, setIndex] = useState(0);
+    const [formation, setFormation] = useState('');
 
     useEffect(() => {
         const options = {method: 'GET'};
@@ -118,8 +118,9 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleClick = (e) => {
     const buttonValue = e.target.value
-    console.log(buttonValue);
     let botMessage = createChatBotMessage()
+    console.log(buttonValue);
+    setFormation(buttonValue)
     if(buttonValue === "Ne sait pas"){
         botMessage = createChatBotMessage(responses[1].question, {
             widget: "NSPWidget",
@@ -140,10 +141,69 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
 
   const handleClickLast = (e) => {
     let botMessage = createChatBotMessage()
-    botMessage = createChatBotMessage(responses[8].question, {
+    const buttonValue = e.target.value
+    console.log(buttonValue);
+    if(buttonValue === "Non je ne suis pas intéressé(e)"){
+      botMessage = createChatBotMessage(responses[12].question, {
         widget: "Responseheight",
         withAvatar: true,
       });
+    }else if(buttonValue === "Musique"){
+      botMessage = createChatBotMessage(responses[8].question,{
+        widget: "Responseheight",
+        withAvatar: true,
+      })
+    }
+    else if(buttonValue === "Art"){
+      botMessage = createChatBotMessage(responses[9].question,{
+        widget: "Responseheight",
+        withAvatar: true,
+      })
+    }
+    else if(buttonValue === "Sport"){
+      botMessage = createChatBotMessage(responses[10].question,{
+        widget: "Responseheight",
+        withAvatar: true,
+      })
+    }
+    else if(buttonValue === "A distance"){
+      botMessage = createChatBotMessage(responses[11].question,{
+        widget: "Responseheight",
+        withAvatar: true,
+      })
+    }
+
+    setState((prev) => ({
+      ...prev,
+      messages: [...prev.messages, botMessage],
+    }));
+  };
+
+  const handleClickEight = (e) => {
+    let botMessage = createChatBotMessage()
+    const buttonValue = e.target.value
+    console.log(buttonValue);
+    if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "GACO"){
+      botMessage = createChatBotMessage(responses[14].question);
+    }
+    else if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "MMI"){
+      botMessage = createChatBotMessage(responses[13].question);
+    }
+    else if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "SGM"){
+      botMessage = createChatBotMessage(responses[16].question);
+    }
+    else if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "GCCD"){
+      botMessage = createChatBotMessage(responses[17].question);
+    }
+    else if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "PEC"){
+      botMessage = createChatBotMessage(responses[15].question);
+    }
+    else if(buttonValue === "Activités sportives sur le campus"){
+      botMessage = createChatBotMessage(responses[18].question);
+    }
+    else if(buttonValue === "Associations dans le campus "){
+      botMessage = createChatBotMessage(responses[19].question);
+    }
 
     setState((prev) => ({
       ...prev,
@@ -160,6 +220,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             handleClickNSP,
             handleClickNSPBis,
             handleClickLast,
+            handleClickEight,
           },
         });
       })}

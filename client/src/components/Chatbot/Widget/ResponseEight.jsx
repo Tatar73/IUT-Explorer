@@ -17,8 +17,8 @@ const Responseheight = (props) => {
   
   const buttonMarkup = responses.length > 0 && (
     <>
-    {responses[8].reponse.map(test =>{
-      return<button key={test} value={test}>{test}</button>
+    {responses[12].reponse.map(test =>{
+      return<button key={test} onClick={props.actionProvider.handleClickEight} value={test}>{test}</button>
     })}
     </>
   );
