@@ -49,122 +49,184 @@
             width: 100%;
             z-index: -1;
         }
+    }
+    .chat{
+        height: 80vh;
+        .react-chatbot-kit-chat-input-container{
+            display: none;
         }
-        .chat{
+        .react-chatbot-kit-chat-container{
+            font-family: Poppins;
+            width: 100%;
+            border-radius: unset;
             height: 80vh;
-            .react-chatbot-kit-chat-container{
-                font-family: Poppins;
-                width: 100%;
-                border-radius: unset;
-                height: 80vh;
-            }
-            .react-chatbot-kit-chat-message-container{
-                margin-top: 20px;
-            }
+        }
 
-            .react-chatbot-kit-chat-inner-container{
-                height: 90%;
-                background: #D8FFF1;
-            }
+        .chatPage .chat .react-chatbot-kit-chat-message-container{
+            padding: 20px 40px 10px 40px;
+        }
+        .react-chatbot-kit-chat-inner-container{
+            height: 90%;
+            background: #D8FFF1;
+        }
 
-            .react-chatbot-kit-chat-header{
-                display: none;
-            }   
+        .react-chatbot-kit-chat-header{
+            display: none;
+        }   
 
-            .react-chatbot-kit-chat-bot-message{
-                background: #FFFFFF;
-                border-radius: 20px 20px 20px 0px;
-                color: black;
-                margin: 0;
-                span{
-                    font-size: 18px;
-                }
+        .react-chatbot-kit-chat-bot-message{
+            background: #FFFFFF;
+            border-radius: 20px 20px 20px 0px;
+            color: black;
+            margin: 0;
+            span{
+                font-size: 18px;
             }
+        }
 
-            .react-chatbot-kit-chat-bot-avatar-container{
-                display: none;
-            }
+        .react-chatbot-kit-chat-bot-avatar-container{
+            display: none;
+        }
 
-            .react-chatbot-kit-user-avatar-container{
-                display: none;
-            }
+        .react-chatbot-kit-user-avatar-container{
+            display: none;
+        }
 
-            .react-chatbot-kit-chat-bot-message-arrow{
-                display: none;
-            }
+        .react-chatbot-kit-chat-bot-message-arrow{
+            display: none;
+        }
 
-            .react-chatbot-kit-chat-bot-message-arrow{
-                border-right: 8px solid #1E1E1E !important;
-            }
+        .react-chatbot-kit-chat-bot-message-arrow{
+            border-right: 8px solid #1E1E1E !important;
+        }
 
-            .react-chatbot-kit-chat-btn-send {
-                background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%) !important;
-                border-radius: 5px !important;
-            }
+        .react-chatbot-kit-chat-btn-send {
+            background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%) !important;
+            border-radius: 5px !important;
+        }
 
-            .react-chatbot-kit-chat-message-container{
-                height: 90%;
-                overflow: scroll;
-                padding: 0 40px 10px 40px;
+        .react-chatbot-kit-chat-message-container{
+            height: 90%;
+            overflow: scroll;
+            padding: 0 40px 10px 40px;
+        }
+        .react-chatbot-kit-chat-bot-message{
+            width: 85%;
+        }
+        .react-chatbot-kit-user-chat-message{
+            background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
+            border-radius: 27px 20px 0px 27px;
+            color: white;
+            span{
+                font-size: 16px;
             }
-            .react-chatbot-kit-chat-bot-message{
-                width: 85%;
+        }
+        .react-chatbot-kit-user-chat-message-arrow{
+            display: none;
+        }
+        .react-chatbot-kit-chat-input-container{
+            height: 100px;
+            background-color: white;
+        }
+        .react-chatbot-kit-chat-input-form{
+            height: 45px;
+            width: 100%;
+            margin: 0 45px;
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            gap: 20px;
+        }
+        .react-chatbot-kit-chat-input{
+            border: 1px solid #9C9C9C;
+            border-radius: 5px;
+            width: calc(100% - 65px);
+            &::focus{
+                outline: none;
             }
-            .react-chatbot-kit-user-chat-message{
-                background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
-                border-radius: 27px 20px 0px 27px;
-                color: white;
-                span{
-                    font-size: 16px;
-                }
-            }
-            .react-chatbot-kit-user-chat-message-arrow{
-                display: none;
-            }
-            .react-chatbot-kit-chat-input-container{
-                height: 100px;
+        }
+        .react-chatbot-kit-chat-btn-send{
+            background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%) !important;
+            width: 45px !important;
+            height: 45px !important;
+        }
+
+        .container-button{
+            display: flex;
+            flex-direction: column;
+            button{
+                font-family: 'Poppins';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 16px;
+                padding: 18px;
                 background-color: white;
-            }
-            .react-chatbot-kit-chat-input-form{
-                height: 45px;
-                width: 100%;
-                margin: 0 45px;
-                display: flex;
-                justify-content: space-between;
-                margin-top: 20px;
-                gap: 20px;
-            }
-            .react-chatbot-kit-chat-input{
-                border: 1px solid #9C9C9C;
-                border-radius: 5px;
-                width: calc(100% - 65px);
-                &::focus{
-                    outline: none;
-                }
-            }
-            .react-chatbot-kit-chat-btn-send{
-                background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%) !important;
-                width: 45px !important;
-                height: 45px !important;
-            }
-
-            .container-button{
-                display: flex;
-                flex-direction: column;
-                button{
-                    font-family: 'Poppins';
-                    font-style: normal;
-                    font-weight: 400;
-                    font-size: 16px;
-                    padding: 18px;
-                    background-color: white;
-                    border: none;
-                    margin-bottom: 10px;
-                    border-radius: 20px 20px 0px 20px;
-                    border-bottom: solid 0.5px;
-                }
+                border: none;
+                margin-bottom: 10px;
+                border-radius: 20px 20px 0px 20px;
+                border-bottom: solid 0.5px;
             }
         }
     }
+    .goToMap{
+        background: linear-gradient(91.72deg, #018756 -2.52%, #037791 99.01%);
+        position: absolute;
+        overflow-y: hidden;
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        img{
+            color: white;
+            width: 70px;
+            height: 2.5em;
 
+        }
+        button {
+        display: flex;
+        flex-direction: row-reverse;
+        height: 3em;
+        width: 100px;
+        align-items: center;
+        justify-content: center;
+        background-color: #eeeeee4b;
+        border-radius: 3px;
+        letter-spacing: 1px;
+        transition: all 0.2s linear;
+        cursor: pointer;
+        border: none;
+        background: #fff;
+        }
+
+        button > svg {
+        margin-right: 5px;
+        margin-left: 5px;
+        font-size: 20px;
+        transform: rotateY(180deg);
+        transition: all 0.4s ease-in;
+        }
+
+        button:hover > svg {
+        font-size: 1.2em;
+        transform: translateX(-5px);
+        }
+
+        button:hover {
+        box-shadow: 4px 4px 16px #d1d1d1, -4px -4px 16px #ffffff;
+        transform: translateY(-2px);
+        }
+        p{
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 24px;
+            color: #FFFFFF;
+        }
+    }
+}
 
