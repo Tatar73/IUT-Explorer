@@ -207,9 +207,6 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     else if(buttonValue === "Associations dans le campus "){
       botMessage = createChatBotMessage(responses[19].question);
     }
-    else if(buttonValue === "Aucune de ces 2 réponses"){
-      botMessage = createChatBotMessage(`J'espère avoir pu vous aider, je vous laisse pour diriger vers l'aile ${formation}`);
-    }
 
     setState((prev) => ({
       ...prev,

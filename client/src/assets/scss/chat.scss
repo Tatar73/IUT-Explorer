@@ -55,6 +55,10 @@
         .react-chatbot-kit-chat-input-container{
             display: none;
         }
+        .chatPage .chat .react-chatbot-kit-chat-message-container {
+            padding: unset;
+            padding: 20px 40px 10px 40px;
+        }
         .react-chatbot-kit-chat-container{
             font-family: Poppins;
             width: 100%;
