@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import GacoWidget from './Widget/GacoWidget';
 import GCCDWidget from './Widget/GCCDWidget';
 import MMIWidget from './Widget/MMIWidget';
@@ -7,7 +7,6 @@ import SGMWidget from './Widget/SGMWidget';
 import NSPWidget from './Widget/NSPWidget';
 import Response7Widget from './Widget/Response7Widget';
 import ResponseEight from './Widget/ResponseEight'
-import { MapContext } from '../../App';
 
 const config = {
     widgets: [
@@ -49,9 +48,7 @@ const config = {
 
 const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const [responses, setReponses] = useState([]);
-    // const [formation, setFormation] = useState('');
-    const { formation, setFormation } = useContext(MapContext);
-
+    const [formation, setFormation] = useState('');
 
     useEffect(() => {
         const options = {method: 'GET'};
@@ -187,7 +184,7 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     const buttonValue = e.target.value
     console.log(buttonValue);
     if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "GACO"){
-      botMessage = createChatBotMessage(responses[14].question)
+      botMessage = createChatBotMessage(responses[14].question);
     }
     else if(buttonValue === "Années à l’étranger (Erasmus)" && formation == "MMI"){
       botMessage = createChatBotMessage(responses[13].question);
