@@ -74,30 +74,35 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
             widget: "SGMWidget",
             withAvatar: true,
           });
+          setFormation("SGM")
     }
     if(buttonValueNSP === "Packaging innovation"){
         botMessage = createChatBotMessage(responses[3].question, {
             widget: "PECWidget",
             withAvatar: true,
           });
+          setFormation("PEC")
     }
     if(buttonValueNSP === "Multimédia internet"){
         botMessage = createChatBotMessage(responses[4].question, {
             widget: "MMIWidget",
             withAvatar: true,
           });
+          setFormation("MMI")
     }
     if(buttonValueNSP === "Génie civil"){
         botMessage = createChatBotMessage(responses[5].question, {
             widget: "GCCDWidget",
             withAvatar: true,
           });
+          setFormation("GCCD")
     }
     if(buttonValueNSP === "Gestion commerce"){
         botMessage = createChatBotMessage(responses[6].question, {
             widget: "GacoWidget",
             withAvatar: true,
           });
+          setFormation("GACO")
     }
 
     setState((prev) => ({
@@ -204,8 +209,12 @@ const ActionProvider = ({ createChatBotMessage, setState, children }) => {
     else if(buttonValue === "Activités sportives sur le campus"){
       botMessage = createChatBotMessage(responses[18].question);
     }
-    else if(buttonValue === "Associations dans le campus "){
+    else if(buttonValue === "Associations dans le campus"){
       botMessage = createChatBotMessage(responses[19].question);
+    }
+    else if(buttonValue === "Aucune de ces 2 réponses"){
+      botMessage = createChatBotMessage(`J'espère avoir pu vous aider, je vous laisse pour diriger vers l'aile ${formation}`)
+      console.log('yes');
     }
 
     setState((prev) => ({
